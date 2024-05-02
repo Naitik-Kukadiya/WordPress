@@ -1,0 +1,16 @@
+function direct_care_scripts() {
+// add main css
+	wp_enqueue_style( 'direct-care-style', get_stylesheet_uri(), array(), _S_VERSION );
+
+
+//add custom css
+  wp_enqueue_style( 'direct-care-navigation', get_template_directory_uri() . '/css/navigation.css');
+
+
+//add script
+	wp_enqueue_script( 'direct-care-js-custom', get_template_directory_uri() . '/assets/js/custom.js', array(), _S_VERSION, true );
+
+
+}
+add_action( 'wp_enqueue_scripts', 'direct_care_scripts' );
+ 
