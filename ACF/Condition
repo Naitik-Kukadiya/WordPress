@@ -1,0 +1,87 @@
+Heading, Peragraph, Text Condition
+
+<?php $s2_heading = get_field('s2_heading');
+                    if($s2_heading){
+                    ?>
+
+                    <h2><?php echo $s2_heading;?></h2>
+
+                    <?php }?>
+
+
+
+Image Condition
+
+<?php $offer_img = get_field('s2_image');
+                    if($offer_img){
+                    ?>
+
+                    <div class="offer-img text-end">
+                        <img src="<?php echo $offer_img['url']?>" alt="<?php if(!$offer_img['alt']){
+                                                                                echo $offer_img['title'];
+                                                                                }
+                                                                                else{
+                                                                                    echo $offer_img['alt'];
+                                                                                }
+                                                                                ?>" width="100%">
+                    </div>
+
+                    <?php }?>
+
+
+foreach Loop Condition
+
+<?php $s4_testimonian = get_field('s4_testimonian');
+                            if($s4_testimonian){
+                                foreach($s4_testimonian as $testimonian){
+                            ?>
+
+                            <div class="swiper-slide">
+                                <div class="testi-box text-center position-relative">
+                                    <?php $s4_image = $testimonian['s4_image'];
+                                    if($s4_image){
+                                    ?>
+                                    <div class="testi-author">
+                                        <img src="<?php echo $s4_image['url'];?>" alt="<?php if(!$s4_image['alt']){
+                                                                                                echo $s4_image['title'];
+                                                                                                }
+                                                                                                else{
+                                                                                                    echo $s4_image['alt'];
+                                                                                                }
+                                                                                                ?>" width="100%">
+                                    </div>
+                                    <?php }?>
+                                    <div class="testi-desc">
+                                        <?php $s4_star_image = $testimonian['s4_star_image'];
+                                        if($s4_star_image){
+                                        ?>
+                                        <img src="<?php echo $s4_star_image['url'];?>" alt="<?php if(!$s4_star_image['alt']){
+                                                                                                        echo $s4_star_image['title'];
+                                                                                                        }
+                                                                                                        else{
+                                                                                                            echo $s4_star_image['alt'];
+                                                                                                        }
+                                                                                                        ?>" width="100%">
+                                        <?php }?>
+
+                                        <?php $s4_name = $testimonian['s4_name'];
+                                        if($s4_name){
+                                        ?>
+                                        <h3><?php echo $s4_name;?></h3>
+                                        <?php }?>
+                                        
+                                        
+                                    </div>
+                                            
+                                    <?php $s4_peragraph = $testimonian['s4_peragraph'];
+                                        if($s4_peragraph){
+                                        ?>
+                                        <p><?php echo $s4_peragraph;?></p>
+                                        <?php }?>
+                                    
+                                    
+                                </div>
+                            </div>
+                            
+                            <?php }}?>
+
